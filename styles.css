@@ -1,13 +1,13 @@
 body {
     font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
     background-color: #f4f4f4;
     color: #333;
+    margin: 0;
+    padding: 0;
 }
 
 header {
-    background-color: #4CAF50;
+    background-color: #6C6C6C;
     color: white;
     text-align: center;
     padding: 1em;
@@ -21,12 +21,68 @@ main {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-footer {
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 5px;
+}
+
+select, button {
+    margin-bottom: 15px;
+    padding: 10px;
+    font-size: 1em;
+}
+
+.question {
+    margin-bottom: 20px;
+}
+
+#result {
     text-align: center;
-    padding: 1em;
-    background-color: #333;
+    margin-top: 20px;
+}
+#reset-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 10px 20px;
+    background-color: #6C6C6C;
     color: white;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#reset-button:hover {
+    background-color: #4A4A4A;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #6C6C6C;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #4A4A4A;
+}
+
+h2 {
+    margin-top: 20px;
+}
+
+p {
+    font-size: 1em;
+    color: #555;
+    margin-top: 10px;
+}
+
+p[id$="-result"] {
+    color: blue;
 }

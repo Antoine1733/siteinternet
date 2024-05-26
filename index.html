@@ -3,18 +3,306 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mon Site Web</title>
+    <title>Théories</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
-        <h1>Bienvenue sur mon site web</h1>
+        <h1>Théories</h1>
+        <button id="reset-button" onclick="resetForm()">Recommencer</button>
     </header>
     <main>
-        <p>Ceci est un exemple de site web créé avec HTML et CSS.</p>
+        <p>En fonction que vous soyez un homme ou une femme, vous n'aurez pas les mêmes questions.</p>
+        <form id="questionnaire">
+            <div class="question">
+                <label for="gender">Êtes-vous un homme ou une femme ?</label>
+                <select id="gender" name="gender" required onchange="showResult('gender')">
+                    <option value="">Sélectionnez</option>
+                    <option value="homme">Homme</option>
+                    <option value="femme">Femme</option>
+                </select>
+            </div>
+            <div class="question" id="tatouee-question">
+                <label for="tatouee">Êtes-vous tatouée ?</label>
+                <select id="tatouee" name="tatouee" onchange="showResult('tatouee')">
+                    <option value="">Sélectionnez</option>
+                    <option value="oui">Oui</option>
+                    <option value="non">Non</option>
+                </select>
+                <p id="tatouee-result"></p>
+            </div>
+            <div class="question">
+                <label for="pieteGentillesse">La fille/mec a de la pitié et de la gentillesse pour toi ?</label>
+                <select id="pieteGentillesse" name="pieteGentillesse" onchange="showResult('pieteGentillesse')">
+                    <option value="">Sélectionnez</option>
+                    <option value="oui">Oui</option>
+                    <option value="non">Non</option>
+                </select>
+                <p id="pieteGentillesse-result"></p>
+            </div>
+            <div class="question">
+                <label for="age">As-tu plus de 20 ans ?</label>
+                <select id="age" name="age" onchange="showResult('age')">
+                    <option value="">Sélectionnez</option>
+                    <option value="oui">Oui</option>
+                    <option value="non">Non</option>
+                </select>
+                <p id="age-result"></p>
+            </div>
+            <div class="question" id="gererAge-question">
+                <label for="gererAge">Tu gères des meufs de 3 ans de moins que toi ?</label>
+                <select id="gererAge" name="gererAge" onchange="showResult('gererAge')">
+                    <option value="">Sélectionnez</option>
+                    <option value="oui">Oui</option>
+                    <option value="non">Non</option>
+                </select>
+                <p id="gererAge-result"></p>
+            </div>
+            <div class="question" id="teub-question">
+                <label for="teub">Tu as une teub supérieure ou inférieure à la moyenne ?</label>
+                <select id="teub" name="teub" onchange="showResult('teub')">
+                    <option value="">Sélectionnez</option>
+                    <option value="supérieure">Supérieure</option>
+                    <option value="inférieure">Inférieure</option>
+                </select>
+                <p id="teub-result"></p>
+            </div>
+            <div class="question" id="habillerSoiree-question">
+                <label for="habillerSoiree">Tu as fait super gaffe pour t'habiller en soirée ?</label>
+                <select id="habillerSoiree" name="habillerSoiree" onchange="showResult('habillerSoiree')">
+                    <option value="">Sélectionnez</option>
+                    <option value="oui">Oui</option>
+                    <option value="non">Non</option>
+                </select>
+                <p id="habillerSoiree-result"></p>
+            </div>
+            <div class="question">
+                <label for="capotesSoiree">Tu as apporté des capotes en soirée ?</label>
+                <select id="capotesSoiree" name="capotesSoiree" onchange="showResult('capotesSoiree')">
+                    <option value="">Sélectionnez</option>
+                    <option value="oui">Oui</option>
+                    <option value="non">Non</option>
+                </select>
+                <p id="capotesSoiree-result"></p>
+            </div>
+            <div class="question" id="iphone-question">
+                <label for="iphone">Tu as un iPhone ?</label>
+                <select id="iphone" name="iphone" onchange="showResult('iphone')">
+                    <option value="">Sélectionnez</option>
+                    <option value="oui">Oui</option>
+                    <option value="non">Non</option>
+                </select>
+                <p id="iphone-result"></p>
+            </div>
+            <div class="question">
+                <label for="musees">Tu vas dans des musées ?</label>
+                <select id="musees" name="musees" onchange="showResult('musees')">
+                    <option value="">Sélectionnez</option>
+                    <option value="oui">Oui</option>
+                    <option value="non">Non</option>
+                </select>
+                <p id="musees-result"></p>
+            </div>
+            <div class="question">
+                <label for="cherchePas">Tu cherches activement une meuf/mec ?</label>
+                <select id="cherchePas" name="cherchePas" onchange="showResult('cherchePas')">
+                    <option value="">Sélectionnez</option>
+                    <option value="oui">Oui</option>
+                    <option value="non">Non</option>
+                </select>
+                <p id="cherchePas-result"></p>
+            </div>
+            <div class="question">
+                <label for="ex2ans">T'as une ex de plus de 2 ans ?</label>
+                <select id="ex2ans" name="ex2ans" onchange="showResult('ex2ans')">
+                    <option value="">Sélectionnez</option>
+                    <option value="oui">Oui</option>
+                    <option value="non">Non</option>
+                </select>
+                <p id="ex2ans-result"></p>
+            </div>
+            <div class="question">
+                <label for="presidentBDE">Tu es président du BDE ?</label>
+                <select id="presidentBDE" name="presidentBDE" onchange="showResult('presidentBDE')">
+                    <option value="">Sélectionnez</option>
+                    <option value="oui">Oui</option>
+                    <option value="non">Non</option>
+                </select>
+                <p id="presidentBDE-result"></p>
+            </div>
+            <div class="question">
+                <label for="fumais5eme">Tu fumais en 5ème ?</label>
+                <select id="fumais5eme" name="fumais5eme" onchange="showResult('fumais5eme')">
+                    <option value="">Sélectionnez</option>
+                    <option value="oui">Oui</option>
+                    <option value="non">Non</option>
+                </select>
+                <p id="fumais5eme-result"></p>
+            </div>
+            <div class="question">
+                <label for="conversationRelance">Tu as relancé 3 fois la conversation sans réponse ?</label>
+                <select id="conversationRelance" name="conversationRelance" onchange="showResult('conversationRelance')">
+                    <option value="">Sélectionnez</option>
+                    <option value="oui">Oui</option>
+                    <option value="non">Non</option>
+                </select>
+                <p id="conversationRelance-result"></p>
+            </div>
+            <div class="question">
+                <label for="relationLibre">Es-tu dans une relation libre ?</label>
+                <select id="relationLibre" name="relationLibre" onchange="showResult('relationLibre')">
+                    <option value="">Sélectionnez</option>
+                    <option value="oui">Oui</option>
+                    <option value="non">Non</option>
+                </select>
+                <p id="relationLibre-result"></p>
+            </div>
+            <div class="question">
+                <label for="relationLibreSentiment">Si oui, te sens-tu plus libre que ton partenaire ?</label>
+                <select id="relationLibreSentiment" name="relationLibreSentiment" onchange="showResult('relationLibreSentiment')">
+                    <option value="">Sélectionnez</option>
+                    <option value="oui">Oui</option>
+                    <option value="non">Non</option>
+                </select>
+                <p id="relationLibreSentiment-result"></p>
+            </div>
+            <div class="question">
+                <label for="possedeAppartement">Possèdes-tu un appartement ?</label>
+                <select id="possedeAppartement" name="possedeAppartement" onchange="showResult('possedeAppartement')">
+                    <option value="">Sélectionnez</option>
+                    <option value="oui">Oui</option>
+                    <option value="non">Non</option>
+                </select>
+                <p id="possedeAppartement-result"></p>
+            </div>
+            <div class="question">
+                <label for="utiliseInstagram">Utilises-tu Instagram ?</label>
+                <select id="utiliseInstagram" name="utiliseInstagram" onchange="showResult('utiliseInstagram')">
+                    <option value="">Sélectionnez</option>
+                    <option value="oui">Oui</option>
+                    <option value="non">Non</option>
+                </select>
+                <p id="utiliseInstagram-result"></p>
+            </div>
+            <div class="question" id="instaEnBoiteHomme">
+                <label for="prisInstaEnBoiteHomme">As-tu déjà pris l'Instagram d'une fille en boîte ?</label>
+                <select id="prisInstaEnBoiteHomme" name="prisInstaEnBoiteHomme" onchange="showResult('prisInstaEnBoiteHomme')">
+                    <option value="">Sélectionnez</option>
+                    <option value="oui">Oui</option>
+                    <option value="non">Non</option>
+                </select>
+                <p id="prisInstaEnBoiteHomme-result"></p>
+            </div>
+            <div class="question" id="instaEnBoiteFemme">
+                <label for="prisInstaEnBoiteFemme">As-tu déjà pris l'Instagram d'un mec en boîte ?</label>
+                <select id="prisInstaEnBoiteFemme" name="prisInstaEnBoiteFemme" onchange="showResult('prisInstaEnBoiteFemme')">
+                    <option value="">Sélectionnez</option>
+                    <option value="oui">Oui</option>
+                    <option value="non">Non</option>
+                </select>
+                <p id="prisInstaEnBoiteFemme-result"></p>
+            </div>
+            <div class="question">
+                <label for="snapScore">Son score snap augmente après qu'elle t'ait dit bonne nuit ?</label>
+                <select id="snapScore" name="snapScore" onchange="showResult('snapScore')">
+                    <option value="">Sélectionnez</option>
+                    <option value="oui">Oui</option>
+                    <option value="non">Non</option>
+                </select>
+                <p id="snapScore-result"></p>
+            </div>
+            <div class="question">
+                <label for="chatelet">Ton date te donne rendez-vous à Châtelet ?</label>
+                <select id="chatelet" name="chatelet" onchange="showResult('chatelet')">
+                    <option value="">Sélectionnez</option>
+                    <option value="oui">Oui</option>
+                    <option value="non">Non</option>
+                </select>
+                <p id="chatelet-result"></p>
+            </div>
+            <div class="question">
+                <label for="chicha">Ton date est dans une chicha ?</label>
+                <select id="chicha" name="chicha" onchange="showResult('chicha')">
+                    <option value="">Sélectionnez</option>
+                    <option value="oui">Oui</option>
+                    <option value="non">Non</option>
+                </select>
+                <p id="chicha-result"></p>
+            </div>
+            <div class="question" id="voiture-question">
+                <label for="voiture">Tu as une voiture ?</label>
+                <select id="voiture" name="voiture" onchange="showResult('voiture')">
+                    <option value="">Sélectionnez</option>
+                    <option value="oui">Oui</option>
+                    <option value="non">Non</option>
+                </select>
+                <p id="voiture-result"></p>
+            </div>
+            <div class="question" id="meilleurPote-question">
+                <label for="meilleurPote">Ta meuf a un meilleur pote ?</label>
+                <select id="meilleurPote" name="meilleurPote" onchange="showResult('meilleurPote')">
+                    <option value="">Sélectionnez</option>
+                    <option value="oui">Oui</option>
+                    <option value="non">Non</option>
+                </select>
+                <p id="meilleurPote-result"></p>
+            </div>
+            <div class="question">
+                <label for="flirtPotes">Es-tu en flirt avec quelqu'un ?</label>
+                <select id="flirtPotes" name="flirtPotes" onchange="showResult('flirtPotes')">
+                    <option value="">Sélectionnez</option>
+                    <option value="oui">Oui</option>
+                    <option value="non">Non</option>
+                </select>
+                <p id="flirtPotes-result"></p>
+            </div>
+            <div class="question">
+                <label for="bloques">As-tu regardé dans les bloquées de ta femme/homme ?</label>
+                <select id="bloques" name="bloques" onchange="showResult('bloques')">
+                    <option value="">Sélectionnez</option>
+                    <option value="oui">Oui</option>
+                    <option value="non">Non</option>
+                </select>
+                <p id="bloques-result"></p>
+            </div>
+            <div class="question" id="chargeurSoiree-question">
+                <label for="chargeurSoiree">Un mec en soirée t'a proposé de l’accompagner pour aller chercher son chargeur à l’étage ?</label>
+                <select id="chargeurSoiree" name="chargeurSoiree" onchange="showResult('chargeurSoiree')">
+                    <option value="">Sélectionnez</option>
+                    <option value="oui">Oui</option>
+                    <option value="non">Non</option>
+                </select>
+                <p id="chargeurSoiree-result"></p>
+            </div>
+            <div class="question" id="quitteSalle-question">
+                <label for="quitteSalle">Tu t'es fait quitter ?</label>
+                <select id="quitteSalle" name="quitteSalle" onchange="showResult('quitteSalle')">
+                    <option value="">Sélectionnez</option>
+                    <option value="oui">Oui</option>
+                    <option value="non">Non</option>
+                </select>
+                <p id="quitteSalle-result"></p>
+            </div>
+            <div class="question" id="storyPrivee-question">
+                <label for="storyPrivee">Tu l'as ajouté en story privée ?</label>
+                <select id="storyPrivee" name="storyPrivee" onchange="showResult('storyPrivee')">
+                    <option value="">Sélectionnez</option>
+                    <option value="oui">Oui</option>
+                    <option value="non">Non</option>
+                </select>
+                <p id="storyPrivee-result"></p>
+            </div>
+            <div class="question">
+                <label for="bugLocalisation">La localisation de ta meuf/mec bug tous les soirs à la même heure ?</label>
+                <select id="bugLocalisation" name="bugLocalisation" onchange="showResult('bugLocalisation')">
+                    <option value="">Sélectionnez</option>
+                    <option value="oui">Oui</option>
+                    <option value="non">Non</option>
+                </select>
+                <p id="bugLocalisation-result"></p>
+            </div>
+        </form>
     </main>
-    <footer>
-        <p>&copy; 2024 Mon Site Web</p>
-    </footer>
+    <script src="script.js"></script>
 </body>
 </html>
